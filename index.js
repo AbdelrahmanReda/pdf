@@ -1,13 +1,15 @@
 const express = require("express");
 const {readFileSync} = require("fs");
+const pdf = require('html-pdf')
 const app = express();
 app.get("/", (req, res) => {
   res.send("Express on Vercel");
 });
 
 
+app.use(express.json())
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 6080;
 
 
 app.post('/generate-pdf/', async (req, res) => {
