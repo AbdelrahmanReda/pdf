@@ -13,7 +13,7 @@ router.post('/generate-pdf', async (req, res) => {
         console.log("htmlContent")
         const finalHtml = replacePlaceholders(htmlContent, user, employer);
         console.log("finalHtml")
-        const browser = await puppeteer.launch();
+        const browser = await puppeteer.launch({headless: true, ignoreDefaultArgs: [], timeout: 3000});
         console.log("browser")
         const page = await browser.newPage();
         console.log("page")
