@@ -9,7 +9,7 @@ app.get("/", (req, res) => {
 
 app.use(express.json())
 
-const PORT = process.env.PORT || 6080;
+const PORT = process.env.PORT || 3000;
 
 
 app.post('/generate-pdf/', async (req, res) => {
